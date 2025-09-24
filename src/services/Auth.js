@@ -1,20 +1,21 @@
 class Auth {
-  constructor(){
+  constructor() {
     this.token = null;
   }
 
-  retriveToken = ()=>{
+  retriveToken = () => {
     return localStorage.getItem('Token');
   }
 
-  storeToken = (t)=>{
-    localStorage.setItem('Token',t);
+  storeToken = (t) => {
+    localStorage.setItem('Token', t);
   }
 
-  deleteToken = ()=>{
+  deleteToken = () => {
     localStorage.removeItem('Token');
   }
-
-
 }
-export default new Auth();
+
+// ✅ create a named instance before exporting
+const auth = new Auth();
+export default auth;
